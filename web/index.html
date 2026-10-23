@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Eventos Climáticos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loginSection" class="screen flex-center">
+        <div class="card login-card">
+            <h2>☁️ Login Climático</h2>
+            <p class="subtitle">Acesse o sistema para registrar eventos</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">E-mail</label>
+                    <input type="email" id="loginEmail" placeholder="ana@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginSenha">Senha</label>
+                    <input type="password" id="loginSenha" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+                <div id="loginError" class="error-msg"></div>
+            </form>
+            <div class="demo-info">
+                <small><strong>Usuários de teste:</strong><br>
+                ana@email.com | senha123<br>
+                maria@email.com | senha123</small>
+            </div>
+        </div>
+    </div>
+    <div id="homeSection" class="screen hidden">
+        <header class="header">
+            <div class="header-content container">
+                <h1>Eventos Climáticos Extremos</h1>
+                <div class="user-profile">
+                    <span>Olá, <strong id="userName">Usuário</strong></span>
+                    <button id="btnLogout" class="btn btn-secondary btn-sm">Sair</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="container main-content">
+            <section class="card form-section">
+                <h3 id="formTitle">Registrar Novo Evento</h3>
+                <form id="eventoForm">
+                    <input type="hidden" id="eventoId">
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" id="cidade" placeholder="Ex: Amparo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipoEvento">Tipo de Evento</label>
+                            <input type="text" id="tipoEvento" placeholder="Ex: Tempestade, Queimada" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="temperatura">Temp. Máxima (°C)</label>
+                            <input type="number" step="0.1" id="temperatura" placeholder="Ex: 34.2">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nivelImpacto">Nível / Descrição do Impacto</label>
+                        <textarea id="nivelImpacto" rows="2" placeholder="Descreva os danos..." required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="btnSave">Salvar Evento</button>
+                        <button type="button" class="btn btn-cancel hidden" id="btnCancelEdit">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="card table-section">
+                <h3>Eventos Registrados</h3>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cidade</th>
+                                <th>Tipo</th>
+                                <th>Temp (°C)</th>
+                                <th>Impacto</th>
+                                <th>Data</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="eventosTableBody">
+                            <!-- Preenchido via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
