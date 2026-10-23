@@ -138,19 +138,15 @@ O front-end comunica diretamente com os seguintes endpoints pré-definidos na AP
 
 ###  1. Login
 
-```markdown
 ![Tela de Login](./Assets/Captura%20de%20tela%202026-10-23%20144641.png)
 
-```
 
 ---
 
 ###  2. Painel Principal 
 
-```markdown
 ![Tela de Início](./Assets/oi.png)
 
-```
 
 ```
 
